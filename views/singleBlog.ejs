@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+    <link rel="stylesheet" href="/css/singleBlog.css">
+    <title>My Blog</title>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Blog</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Show Mobile List</a></li>
+        </ul>
+    </nav>
+
+    <section class="blog-post">
+        <div>
+            <button style="float:right;  margin-left: 10px; font-size: 15px;"><a href="/delete/<%- data[0].id %>">Delete</a></button>
+            <button style="float:right; font-size: 15px;"><a href="/updateForm/<%- data[0].id %>">Edit</a></button>
+        </div>
+        <p>Published on <span class="date"><%- data[0].createdAt.toDateString() %></span></p> 
+        <h2>Mobile Name: <%- data[0].name %></h2>
+        <h4>Price: $<%- data[0].price %></h4>
+        <p><b>Description</p>
+        <p><%- data[0].description %></p>
+    </section>
+
+    <footer>
+        &copy; 2023 My Blog
+    </footer>
+   
+    
+</body>
+
+</html>

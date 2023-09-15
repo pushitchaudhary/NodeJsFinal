@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Your head content here -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+    <link rel="stylesheet" href="/css/updateForm.css">
+
+</head>
+<style>
+   
+</style>
+
+<body>
+    <header>
+        <h1>Online Mobile Shop</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Show Mobile Lists</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <form action="/updateForm/<%- data[0].id %>" method="POST">
+            <label for="name">Mobile Name:</label>
+            <input type="text" id="name" value="<%- data[0].name %>" name="name" required>
+
+            <label for="email">Price</label>
+            <input type="text" id="price" value="<%- data[0].price %>" name="price" required>
+
+            <label for="message">Description:</label>
+            <textarea id="message" name="description"  rows="4" required><%- data[0].description %></textarea>
+
+            <button type="submit">Update</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2023 My Homepage
+    </footer>
+
+
+
+
+      
+</body>
+
+</html>

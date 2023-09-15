@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <%- include('inc/header.ejs') %>
+    <nav>
+        <ul>
+            <li><a href="/createForm">Add Mobile Detail</a></li>
+        </ul>
+    </nav>
+
+    <!-- Card container to hold the cards -->
+    <div class="card-container">
+
+        <% data.forEach((item)=>{ %>
+        <div class="card">
+            <h2>Mobile Name: <%- item.name %></h2> <br>
+            <h3>Price: $<%- item.price %></h3>
+            <p>Description</p>
+            <p><%- item.description.slice(0,250) %>...</p>
+            <a href="/singleBlog/<%- item.id %>">read more...</a>
+           
+        </div>
+        <% }) %>
+
+    </div>
+
+    <%- include('inc/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #555;
+    --background-color: #f0f0f0;
+    --text-color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensures that the content takes at least the full height of the viewport */
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: var(--secondary-color);
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Adjust styles for smaller screens */
+    header {
+        padding: 10px;
+    }
+
+    nav {
+        padding: 5px;
+    }
+
+    /* Add more responsive styles as needed */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff6600;
+}
+
+section {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: auto;
+    /* Pushes the footer to the bottom */
+}
+
+h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+/* Styles for individual cards */
+.card {
+    width: calc(30% - 20px);
+    /* Set the width of each card (minus margin) to fit 5 cards in a row */
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 200px;
+    max-height: 250px;
+}
+
+
+
+/* Additional styles for card content */
+.card h3 {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.card p {
+    font-size: 14px;
+}

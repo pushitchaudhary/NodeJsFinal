@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Your head content here -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+    <link rel="stylesheet" href="css/createForm.css">
+</head>
+<body>
+    <%- include('inc/header.ejs') %>
+
+    <nav>
+        <ul>
+            <li><a href="/">Show Mobile Lists</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <form action="/createForm" method="POST">
+            <label for="name">Mobile Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Price</label>
+            <input type="text" id="price" name="price" required>
+
+            <label for="message">Description:</label>
+            <textarea id="message" name="description"  rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <%- include('inc/footer.ejs') %>
+
+
+
+
+      
+</body>
+
+</html>
