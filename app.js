@@ -15,7 +15,7 @@ app.get('/register',(req,res)=>{
     res.render('register.ejs')
 })
 
-app.get('/',async (req,res)=>{
+app.get('/home',async (req,res)=>{
     const data =await mobile.findAll({
         order:[['updatedAt','DESC']]
     })
@@ -50,13 +50,13 @@ app.get('/updateForm/:id', async (req,res)=>{
 
 })
 
-app.get('/login',(req,res)=>{
+app.get('/',(req,res)=>{
     res.render('login.ejs')
 })
 
 
 app.get('/logout',(req,res)=>{
-    res.redirect('/login')
+    res.redirect('/')
 })
 
 // POST API
@@ -70,7 +70,7 @@ app.post('/createForm',async (req,res)=>{
         price:price,
         description:description
     })
-    res.redirect('/');
+    res.redirect('/home');
 })
 
 app.post('/updateForm/:id', async (req,res)=>{
@@ -151,7 +151,7 @@ app.post('/login', async (req,res)=>{
                     console.log("Error comparing password" , err);
                 }else if(result){
                     console.log("Sucessfully Login");
-                    res.redirect('/'); 
+                    res.redirect('/home'); 
                 }else{
                     res.send("Invalid Email or  Password");
                 }
@@ -174,7 +174,7 @@ app.get('/delete/:id',async (req,res)=>{
             id :id
         }
     })
-    res.redirect('/');
+    res.redirect('/home');
 })
 
 
